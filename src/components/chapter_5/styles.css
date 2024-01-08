@@ -1,0 +1,28 @@
+.effect{
+    width: 815px;
+}
+.list-image{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 815px;
+    gap: 5px;
+    margin: 20px;
+}
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+.btn-load-more{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
+    font-size: 15px;
+    cursor: pointer;
+}
+.load-more{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
