@@ -26,3 +26,15 @@
     text-align: center;
     justify-content: center;
 }
+.input{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding: 10px;
+}
+.contains{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

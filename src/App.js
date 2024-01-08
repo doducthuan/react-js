@@ -1,5 +1,6 @@
 import './App.css';
-import UseEffect from './components/chapter_5/UseEffect.js';
+import Dependency from './components/chapter_5/Dependency.js';
+//import UseEffect from './components/chapter_5/UseEffect.js';
 //import State from './components/State.js';
 //import Reducer from './components/chapter_3/Reducer.js';
 //import State from './components/chapter_3/State.js';
@@ -11,7 +12,7 @@ import './components/game/Game.js'
 function App() {
   return (
     <div>
-      <UseEffect></UseEffect>
+      <Dependency></Dependency>
     </div>
     
   );
