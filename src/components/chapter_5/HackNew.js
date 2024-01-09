@@ -12,6 +12,7 @@ const getData = async (search) => {
 }
 const HackNew = () =>{
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("react");
     useEffect(() =>{
         loadData.current();
@@ -21,9 +22,12 @@ const HackNew = () =>{
         const pullData = await getData(search);
         console.log("Pull data: ", pullData);
         setData(pullData);
+        setLoading(false);
     }
     const handSearch = (e) =>{
+        
         if(e.key === "Enter"){
+            setLoading(true);
             setSearch(e.target.value);
         }
     }
@@ -31,10 +35,13 @@ const HackNew = () =>{
         <div>
             <div className="border-search">
                 <input className="input-search" placeholder='search ...' onKeyDown={handSearch}/>
-            </div>         
+            </div>
+                    
             <div className="load-data">
+            {loading && <p>Đang tải dữ liệu</p>}
             {
-                data.length > 0 && data.map((item, index) => (
+                
+                data.length > 0 && !loading && data.map((item, index) => (
                     <div key={index}>{item.title}</div>
                 ))
             }
