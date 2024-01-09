@@ -1,5 +1,6 @@
 import './App.css';
-import Dependency from './components/chapter_5/Dependency.js';
+import Card from './components/chapter_4/Card.js';
+//import Dependency from './components/chapter_5/Dependency.js';
 //import UseEffect from './components/chapter_5/UseEffect.js';
 //import State from './components/State.js';
 //import Reducer from './components/chapter_3/Reducer.js';
@@ -12,7 +13,7 @@ import './components/game/Game.js'
 function App() {
   return (
     <div>
-      <Dependency></Dependency>
+      <Card></Card>
     </div>
     
   );
