@@ -1,19 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState} from 'react';
 import './styles.css';
-const getData = async (search) => {
-    try{
-        const response = await axios.get(`https://hn.algolia.com/api/v1/search?query=${search}`);
-        return response.data?.hits;
-    }
-    catch(error){
-        console.log(error);
-    }
-}
+
 const HackNew = () =>{
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("react");
+    const getData = async (search) => {
+        try{
+            const response = await axios.get(`https://hn.algolia.com/api/v1/search?query=${search}`);
+            return response.data?.hits;
+        }
+        catch(error){
+            console.log(error);
+            setLoading(false);
+        }
+    }
     useEffect(() =>{
         loadData.current();
     },[search]);
@@ -24,8 +26,7 @@ const HackNew = () =>{
         setData(pullData);
         setLoading(false);
     }
-    const handSearch = (e) =>{
-        
+    const handSearch = (e) =>{      
         if(e.key === "Enter"){
             setLoading(true);
             setSearch(e.target.value);
@@ -38,7 +39,7 @@ const HackNew = () =>{
             </div>
                     
             <div className="load-data">
-            {loading && <p>Đang tải dữ liệu</p>}
+            {loading && <p className="loadding">Đang tải dữ liệu ...</p>}
             {
                 
                 data.length > 0 && !loading && data.map((item, index) => (
