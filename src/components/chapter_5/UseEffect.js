@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import './styles.css';
 const getData = async (page) =>{
@@ -13,10 +13,11 @@ const getData = async (page) =>{
 const UseEffect = () =>{
     const [data, setData] = useState([]);
     useEffect(() => {
-        //loadMore();
+        loadMore.current();
     },[]);
     const [page, setPage] = useState(1);
-    const loadMore = async () =>{
+    const loadMore = useRef({});
+    loadMore.current = async () =>{
         const datas = await getData(page);
         const dataCopy = [...data, ...datas]
         setData(dataCopy);
@@ -27,14 +28,14 @@ const UseEffect = () =>{
             <div className="list-image">
             {
                 data.length > 0 && data.map((item, index) =>(
-                    <div>
+                    <div key={index}>
                         <img src={item.download_url} alt={item.author} className="image"/>
                     </div>
                 ))
             }
             </div>
             <div className="load-more">
-                <button className="btn-load-more" onClick={loadMore}>Load more</button>
+                <button className="btn-load-more" onClick={loadMore.current}>Load more</button>
             </div>
             
         </div>   

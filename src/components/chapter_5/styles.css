@@ -38,3 +38,20 @@
     text-align: center;
     justify-content: center;
 }
+.border-search{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.input-search{
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.load-data{
+    margin-left: 30px;
+    margin-top: 30px;
+}

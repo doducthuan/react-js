@@ -1,5 +1,7 @@
 import './App.css';
-import Card from './components/chapter_4/Card.js';
+import HackNew from './components/chapter_5/HackNew.js';
+//import UseEffect from './components/chapter_5/UseEffect.js';
+//import Card from './components/chapter_4/Card.js';
 //import Dependency from './components/chapter_5/Dependency.js';
 //import UseEffect from './components/chapter_5/UseEffect.js';
 //import State from './components/State.js';
@@ -13,7 +15,7 @@ import './components/game/Game.js'
 function App() {
   return (
     <div>
-      <Card></Card>
+      <HackNew></HackNew>
     </div>
     
   );
