@@ -1,5 +1,12 @@
 import './App.css';
-import HackNew from './components/chapter_5/HackNew.js';
+import HandMounted from './components/chapter_6/HandMounted.js';
+//import SetTarget from './components/chapter_6/SetTarget.js';
+//import AutoFocus from './components/chapter_6/AutoFocus.js';
+//import TextAutoResize from './components/chapter_6/TextAutoResize.js';
+//import Ref from './components/chapter_6/Ref.js';
+//import Time from './components/chapter_6/Time.js';
+//import Time from './components/chapter_6/Time.js';
+//import HackNew from './components/chapter_5/HackNew.js';
 //import UseEffect from './components/chapter_5/UseEffect.js';
 //import Card from './components/chapter_4/Card.js';
 //import Dependency from './components/chapter_5/Dependency.js';
@@ -15,7 +22,7 @@ import './components/game/Game.js'
 function App() {
   return (
     <div>
-      <HackNew></HackNew>
+      <HandMounted></HandMounted>
     </div>
     
   );

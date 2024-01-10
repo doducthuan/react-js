@@ -6,25 +6,36 @@ const HackNew = () =>{
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("react");
+    const unmounted = useRef(true);
     const getData = async (search) => {
         try{
-            const response = await axios.get(`https://hn.algolia.com/api/v1/search?query=${search}`);
-            return response.data?.hits;
+                const response = await axios.get(`https://hn.algolia.com/api/v1/search?query=${search}`);
+                return response.data?.hits;
+        
+            
         }
         catch(error){
             console.log(error);
             setLoading(false);
         }
     }
+
     useEffect(() =>{
         loadData.current();
+        return () => {
+            unmounted.current = false;
+        }
     },[search]);
     const loadData = useRef({});
-    loadData.current = async () =>{
+    loadData.current = async () =>{   
         const pullData = await getData(search);
-        console.log("Pull data: ", pullData);
-        setData(pullData);
-        setLoading(false);
+        if(unmounted.current){
+            console.log("Pull data: ", pullData);
+            setData(pullData);
+            setLoading(false);
+        }
+        
+        
     }
     const handSearch = (e) =>{      
         if(e.key === "Enter"){
